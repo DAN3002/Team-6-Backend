@@ -18,11 +18,13 @@ app.set('views', './src/views');
 const learningRouter = require('./src/routes/learning');
 app.use('/learning', learningRouter);
 
+const questionRouter = require('./src/routes/question-route');
+app.use('/api', questionRouter);
+
 const homeRouter = require('./src/routes/index');
 app.use('/', homeRouter);
 
-const questionRouter = require('./src/routes/question-route');
-app.use('/api', questionRouter);
+
 
 
 app.listen(port, () =>
