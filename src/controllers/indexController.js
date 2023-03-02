@@ -12,6 +12,10 @@ class indexController
     {
         res.render('doc');
     }
+
+    learning(req, res){
+        res.render('learning');
+    }
 }
 
 module.exports = new indexController();

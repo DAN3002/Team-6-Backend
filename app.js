@@ -6,21 +6,23 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-const port = config.port || 5000;
+const port = config.port || 7777;
 const path = require('path');
 
 
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.set('view engine', 'ejs');
-app.set('views', './src/views/partials');
+app.set('views', './src/views');
+
+const learningRouter = require('./src/routes/learning');
+app.use('/learning', learningRouter);
 
 const homeRouter = require('./src/routes/index');
 app.use('/', homeRouter);
-// app.get('/home', (req, res) =>
-// {
-//     res.render('index');
-// });
+
+const questionRouter = require('./src/routes/question-route');
+app.use('/api', questionRouter);
 
 
 app.listen(port, () =>
