@@ -15,6 +15,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.set('view engine', 'ejs');
 app.set('views', './src/views');
 
+
+
+
 const learningRouter = require('./src/routes/learning');
 app.use('/learning', learningRouter);
 
@@ -24,8 +27,8 @@ app.use('/api', questionRouter);
 const homeRouter = require('./src/routes/index');
 app.use('/', homeRouter);
 
-
-
+// const test = require('./src/routes/test');
+// app.use('/test', test);
 
 app.listen(port, () =>
 {

@@ -1,12 +1,12 @@
 const express = require('express');
 const router = express.Router();
 
-const indexController = require('../controllers/learningController');
+const learningController = require('../controllers/learningController');
 
 
-router.use('/lesson', indexController.lesson);
-router.use('/end', indexController.end);
-router.use('/', indexController.learning);
+router.use('/lesson', learningController.lesson);
+router.use('/end', learningController.end);
+router.use('/', learningController.learning);
 
 
 module.exports = router;
