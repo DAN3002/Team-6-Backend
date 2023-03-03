@@ -107,8 +107,9 @@ const clickCard = (e) =>
             matches++;
             incrementScore(CORRECT_BONUS);
             if (matches === 8) {
+                localStorage.setItem('mostRecentScore', score);
                 console.log("WINNER");
-                quit();
+                return window.location.assign('matching/end');
             }
             firstPick = null;
             isPaused = false;
@@ -142,3 +143,4 @@ incrementScore = (num) =>
     score += num;
     scoreText.innerText = score;
 };
+
