@@ -3,14 +3,49 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background-size:cover;
 }
 
 #de-bai {
     font-size: 40px;
+    margin-bottom: -10px;
 }
-
-
+.js-multiple {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+  }
+#hud {
+    color: #d34747;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .hud-prefix {
+    
+    padding-bottom: -3rem;
+    text-align: right;
+    margin-right: 3rem;
+    font-size: 1.5rem;
+    left: 100rem;
+  }
+  
+  .hud-prefix-question {
+    text-align: bottom;
+    margin-left: 705px;
+    font-size: 1.5rem;
+    margin-top: -2rem;
+  }
+  .hud-main-text {
+    margin-right: 4.4rem;
+    text-align: right;
+    margin-bottom: -5rem;
+  }
 #quit-btn {
+
     background-image: url(https://d35aaqx5ub95lt.cloudfront.net/images/477ce652444032bff811af59b1057be7.svg);
     background-size: 1200px 1200px;
     background-position: -448px -184px;
@@ -55,6 +90,7 @@ h2 {
     grid-gap: 10px;
 }
 .card {
+    text-align: center;
     box-shadow: 0 3px 10px rgba(200,200,200, 0.9);
     border-radius: 8px;
     position: relative;
@@ -113,3 +149,21 @@ h2 {
     from {border: 5px solid rgb(255, 50, 50); color: red; background-color: rgb(255, 180, 180);}
     to {border: 5px solid rgb(211, 211, 211);background-color: white;color: rgb(30, 30, 30);}
 }
+
+
+#progressBar {
+    width: 50rem;
+    height: 1.5rem;
+    border: 0.3rem solid #e97478;
+    margin-left: 360px;
+    margin-top: -30px;
+    margin-bottom: 10px;
+
+  }
+  
+  #progressBarFull {
+    height: 0.9rem;
+    background-color: #f45009;
+    width: 0%;
+    
+  }

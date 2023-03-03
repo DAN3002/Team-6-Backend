@@ -1,10 +1,11 @@
 // const pokeAPIBaseUrl = "https://pokeapi.co/api/v2/pokemon/";
 const game = document.getElementById('game');
-
+const scoreText = document.getElementById('score');
+let score = 0;
 let firstPick;
 let isPaused = true;
 let matches;
-
+const CORRECT_BONUS = 20;
 const loadCard = async () =>
 {
     const randomIds = new Set();
@@ -13,18 +14,18 @@ const loadCard = async () =>
         randomIds.add(randomNumber);
     }
 
-    //console.log([...randomIds]);
+    console.log([...randomIds]);
 
     const res = await fetch('http://localhost:7777/api/getquestions');
     const questions = await res.json();
-    const question = questions.results;
+    const question = questions.result;
     const a = [...randomIds];
 
     const randomChoice = [];
 
     for (let i = 0; i < a.length; i++) {
         const element = a[i];
-        const index = (question.length + element ) % question.length;
+        const index = element;
         randomChoice[i] = question[index];
     }
     return randomChoice;
@@ -33,6 +34,7 @@ const loadCard = async () =>
 
 const joinGame = async () =>
 {
+    score = 0;
     game.innerHTML = '';
     isPaused = true;
     firstPick = null;
@@ -50,6 +52,7 @@ const joinGame = async () =>
         displayCard([ ...loadedCard, ...temp]);
         isPaused = false;
     }, 200);
+
 };
 
 const displayCard = (card) =>
@@ -97,12 +100,15 @@ const clickCard = (e) =>
             firstPick.id = '';
             firstPick = null;
         } else {
+            
             wordCard.classList.add('corrected');
             firstPick.classList.add('corrected');
             firstPick.id = '';
             matches++;
+            incrementScore(CORRECT_BONUS);
             if (matches === 8) {
                 console.log("WINNER");
+                quit();
             }
             firstPick = null;
             isPaused = false;
@@ -125,9 +131,14 @@ function callWrongAnimation(c1, c2)
     }, 1000);
 };
 
-// const rotateElements = (elements) => {
-//     if(typeof elements !== 'object' || !elements.length) return;
-//     elements.forEach(element => element.classList.toggle('rotated'));
-// }
-
 joinGame();
+
+function quit(){
+    location.assign("/learning");
+}
+
+incrementScore = (num) =>
+{
+    score += num;
+    scoreText.innerText = score;
+};

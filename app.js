@@ -27,9 +27,6 @@ app.use('/api', questionRouter);
 const homeRouter = require('./src/routes/index');
 app.use('/', homeRouter);
 
-// const test = require('./src/routes/test');
-// app.use('/test', test);
-
 app.listen(port, () =>
 {
     console.log(`Server running on port ${port}`);

@@ -3,9 +3,9 @@ const router = express.Router();
 
 const learningController = require('../controllers/learningController');
 
-
+router.use('/lesson/multiple_choice/end', learningController.end);
 router.use('/lesson/:id', learningController.lesson);
-router.use('/end', learningController.end);
+
 router.use('/', learningController.learning);
 
 

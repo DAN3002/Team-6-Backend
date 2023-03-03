@@ -9,7 +9,7 @@ const addQuestion = async (req, res, next) =>
 
         const data = req.body;
         await firestore.collection('feat').doc('question')
-            .collection('hiragana').doc('1.5').set(data);
+            .collection('lesson01').doc('1.6').set(data);
         res.send('save question');
     } catch (error) {
         res.status(404).send(error.message);
