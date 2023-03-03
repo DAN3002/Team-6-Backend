@@ -9,7 +9,7 @@ const addQuestion = async (req, res, next) =>
 
         const data = req.body;
         await firestore.collection('feat').doc('question')
-            .collection('lesson01').doc('1.5').set(data);
+            .collection('hiragana').doc('1.5').set(data);
         res.send('save question');
     } catch (error) {
         res.status(404).send(error.message);
@@ -20,9 +20,7 @@ const getQuestion = async (req, res, next) =>
 {
     const query = getAllUrlParams(req.headers.referer);
     try {
-
         const doc = await firestore.collection('feat').doc('question').collection(query.part).doc(query.id).get();
-
         if (doc.empty) {
             res.status(404).send('no question');
         } else {

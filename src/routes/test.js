@@ -3,7 +3,7 @@ const router = express.Router();
 
 const testC = require('../controllers/testController');
 
-router.use('/', testC.matching);
+router.use('/matching', testC.matching);
 
 
 module.exports = router;

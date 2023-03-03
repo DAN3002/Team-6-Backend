@@ -4,7 +4,7 @@ const router = express.Router();
 const learningController = require('../controllers/learningController');
 
 
-router.use('/lesson', learningController.lesson);
+router.use('/lesson/:id', learningController.lesson);
 router.use('/end', learningController.end);
 router.use('/', learningController.learning);
 
