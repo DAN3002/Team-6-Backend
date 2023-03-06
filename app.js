@@ -5,6 +5,8 @@ const config = require('./config');
 const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
+const port = process.env.port || 7777;
 const path = require('path');
 
 
@@ -12,9 +14,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.set('view engine', 'ejs');
 app.set('views', './src/views');
-
-app.get('/temp', (req, res) => res.render('temp'));
-
 
 const learningRouter = require('./src/routes/learning');
 app.use('/learning', learningRouter);
@@ -24,3 +23,8 @@ app.use('/api', questionRouter);
 
 const homeRouter = require('./src/routes/index');
 app.use('/', homeRouter);
+
+app.listen(port, () =>
+{
+    console.log(`Server running on port ${port}`);
+});
