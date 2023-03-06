@@ -1,4 +1,4 @@
-var domain_name = 'http://' + window.location.host;
+let domain_name = window.location.protocol + '//' + window.location.host;
 const game = document.getElementById('game');
 const scoreText = document.getElementById('score');
 let score = 0;
