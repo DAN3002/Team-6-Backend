@@ -6,7 +6,7 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-const port = config.port || 7777;
+const port = 3000;
 const path = require('path');
 
 
@@ -31,3 +31,5 @@ app.listen(port, () =>
 {
     console.log(`-- Server running on port ${port}`);
 });
+
+module.exports = app;
