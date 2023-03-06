@@ -19,7 +19,7 @@ let availableQuesions = [];
 
 let questions = [];
 
-var domain_name = 'http://' + window.location.host;
+let domain_name = window.location.protocol + '//' + window.location.host;
 
 fetch(
     domain_name + '/api/getquestions'
