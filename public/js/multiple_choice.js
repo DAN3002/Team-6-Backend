@@ -22,7 +22,7 @@ let questions = [];
 
 
 fetch(
-    'http://localhost:7777/api/getquestions'
+    '/api/getquestions'
 )
     .then((res) =>
     {
