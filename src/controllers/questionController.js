@@ -37,10 +37,10 @@ const getQuestion = async (req, res, next) =>
 function getAllUrlParams(url)
 {
     // get query string from url (optional) or window
-    let queryString = url ? url.split('?')[ 1 ] : window.location.search.slice(1);
+    var queryString = url ? url.split('?')[ 1 ] : window.location.search.slice(1);
 
     // we'll store the parameters here
-    let obj = {};
+    var obj = {};
 
     // if query string exists
     if (queryString) {
@@ -49,15 +49,15 @@ function getAllUrlParams(url)
         queryString = queryString.split('#')[ 0 ];
 
         // split our query string into its component parts
-        let arr = queryString.split('&');
+        var arr = queryString.split('&');
 
-        for (let i = 0; i < arr.length; i++) {
+        for (var i = 0; i < arr.length; i++) {
             // separate the keys and the values
-            let a = arr[ i ].split('=');
+            var a = arr[ i ].split('=');
 
             // set parameter name and value (use 'true' if empty)
-            let paramName = a[ 0 ];
-            let paramValue = typeof (a[ 1 ]) === 'undefined' ? true : a[ 1 ];
+            var paramName = a[ 0 ];
+            var paramValue = typeof (a[ 1 ]) === 'undefined' ? true : a[ 1 ];
 
             // (optional) keep case consistent
             paramName = paramName.toLowerCase();
@@ -67,13 +67,13 @@ function getAllUrlParams(url)
             if (paramName.match(/\[(\d+)?\]$/)) {
 
                 // create key if it doesn't exist
-                let key = paramName.replace(/\[(\d+)?\]/, '');
+                var key = paramName.replace(/\[(\d+)?\]/, '');
                 if (!obj[ key ]) obj[ key ] = [];
 
                 // if it's an indexed array e.g. colors[2]
                 if (paramName.match(/\[\d+\]$/)) {
                     // get the index value and add the entry at the appropriate position
-                    let index = /\[(\d+)\]/.exec(paramName)[ 1 ];
+                    var index = /\[(\d+)\]/.exec(paramName)[ 1 ];
                     obj[ key ][ index ] = paramValue;
                 } else {
                     // otherwise add the value to the end of the array

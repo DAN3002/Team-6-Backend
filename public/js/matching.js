@@ -1,4 +1,4 @@
-var domain_name = 'http://' + window.location.host;
+// const pokeAPIBaseUrl = "https://pokeapi.co/api/v2/pokemon/";
 const game = document.getElementById('game');
 const scoreText = document.getElementById('score');
 let score = 0;
@@ -14,7 +14,9 @@ const loadCard = async () =>
         randomIds.add(randomNumber);
     }
 
-    const res = await fetch(domain_name + '/api/getquestions');
+    console.log([...randomIds]);
+
+    const res = await fetch('http://localhost:7777/api/getquestions');
     const questions = await res.json();
     const question = questions.result;
     const a = [...randomIds];
@@ -142,3 +144,29 @@ incrementScore = (num) =>
     scoreText.innerText = score;
 };
 
+//  thông báo thoát 
+
+const multipleClose = document.querySelector('#quit-btn');
+const close = document.querySelector('#alrtbtn2');
+const stay = document.querySelector('#alrtbtn1');
+const alert = document.querySelector('.thong-bao-thoat');
+
+function closeChoice()
+{
+    alert.classList.add('open');
+}
+multipleClose.addEventListener('click', closeChoice);
+
+function closeAlert()
+{
+    alert.classList.remove('open');
+    multiple.classList.remove('open');
+}
+
+close.addEventListener('click', closeAlert);
+// xác nhận ở lại
+function stayAlert()
+{
+    alert.classList.remove('open');
+}
+stay.addEventListener('click', stayAlert);

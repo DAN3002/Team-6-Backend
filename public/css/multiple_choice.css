@@ -37,18 +37,24 @@
   justify-content: center;
   border: none;
   background-color: rgb(255, 251, 251);
+  color: white;
 }
 
 .circle {
-  background: #b51616;
-  border: 0.1875em solid #0f1c3f;
+  background: #c50000;
+  border: 0.01em solid #b51616;
   border-radius: 50%;
-  box-shadow: 0.375em 0.375em 0 0 rgba(240, 4, 4, 0.125);
+  box-shadow: 0.2em 0.2em 0 0 rgba(240, 4, 4, 0.125);
   height: 2em;
   width: 2em;
 }
+
+.btnx:hover {
+  opacity: 0.8;
+}
+
 #question {
-  margin-top: 0px;
+  margin-top: 52px;
   text-align: center;
 }
 
@@ -56,16 +62,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 80px;
-  margin-bottom: 108px;
   flex-wrap: wrap;
+  margin: 8% 16px 8%;
 }
 
 .btn1 {
   position: inherit;
-  padding-top: 3rem;
-  text-align: center;
-
   border-radius: 24px;
   border: solid rgba(159, 155, 155, 0.3);
   border-width: 2px 2px 4px;
@@ -73,7 +75,10 @@
   background-color: white;
   font-size: 25px;
   width: 164px;
-  height: 244px;
+  height: 240px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .btn1:focus {
@@ -113,6 +118,7 @@
   border: 2px solid rgba(0, 0, 0, 0.2);
   font-size: 12px;
   padding: 6px 10px;
+  border-radius: 8px;
 }
 
 #alrtbtn1:hover {
@@ -126,6 +132,8 @@
   background-color: rgba(11, 167, 245, 0.5);
   font-size: 12px;
   padding: 6px 10px;
+  border-radius: 8px;
+
 }
 
 .correct {
@@ -178,15 +186,15 @@
   width: 10%;
 }
 
+.nextbtn:active {
+  box-shadow: none;
+  transform: translateY(2px);
+}
+
 .green {
   border: 2px solid #50b404f3;
   box-shadow: 0 3px 0 #58cc02;
   background-color: #58cc02;
-}
-
-.nextbtn:active {
-  box-shadow: none;
-  transform: translateY(2px);
 }
 
 .wrong {
@@ -251,8 +259,10 @@ html {
 
 #hud {
   color: #d34747;
-  display: flex;
-  justify-content: space-between;
+  text-align: center;
+  display: block;
+  /* display: flex;
+  justify-content: space-around; */
 }
 
 .hud-prefix {
@@ -264,27 +274,35 @@ html {
 
 .hud-prefix-question {
   text-align: bottom;
-  margin-left: 705px;
+  margin-top: -0.5rem;
   font-size: 1.5rem;
-  margin-top: -2rem;
 }
+
 .hud-main-text {
   margin-right: 3rem;
   text-align: center;
 }
 
 #progressBar {
-  width: 50rem;
-  height: 1.5rem;
-  border: 0.3rem solid #e97478;
-  margin-left: 360px;
+  width: 40%;
+  height: 1.2rem;
+  border: 2px solid #e97478;
+  margin-top: 16px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #progressBarFull {
-  height: 0.9rem;
+  height: 1.1rem;
   background-color: #f45009;
   width: 0%;
   
+}
+
+.score {
+  position: absolute;
+  right: 8%;
+  top: 52px;
 }
 
 .choice-container {

@@ -19,10 +19,10 @@ let availableQuesions = [];
 
 let questions = [];
 
-var domain_name = 'http://' + window.location.host;
+
 
 fetch(
-    domain_name + '/api/getquestions'
+    'http://localhost:7777/api/getquestions'
 )
     .then((res) =>
     {
@@ -101,9 +101,9 @@ getNewQuestion = () =>
         return window.location.assign('multiple_choice/end');
     }
     questionCounter++;
-    progressText.innerText = `Question ${questionCounter}/${MAX_QUESTIONS}`;
+    progressText.innerText = `Question ${questionCounter - 1}/${MAX_QUESTIONS}`;
     //Update the progress bar
-    progressBarFull.style.width = `${(questionCounter / MAX_QUESTIONS) * 100}%`;
+    progressBarFull.style.width = `${((questionCounter - 1)/ MAX_QUESTIONS) * 100}%`;
 
     const questionIndex = Math.floor(Math.random() * availableQuesions.length);
     currentQuestion = availableQuesions[ questionIndex ];

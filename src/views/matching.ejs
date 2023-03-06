@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="/../css/matching.css">
+        
         <link
             href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap"
             rel="stylesheet">
@@ -22,10 +22,21 @@
             rel="stylesheet">
         <link rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/../css/matching.css">
+        <link rel="stylesheet" href="/../css/matching_responsive.css"> 
+        
         <title>Learn Japanese</title>
 
     </head>
     <body>
+        <div class="thong-bao-thoat">
+            <div class="alert" role="alert">
+                <h3 class="alert-heading">Are you sure you want to quit?</h3>
+                <p>All the progress in this lesson will be lost</p>
+                <button id="alrtbtn1">STAY</button>
+                <button id="alrtbtn2" onclick="quit()">QUIT</button>
+            </div>
+        </div>
         <div id="hud-item">
             <div class="hud-prefix">
                 Score
@@ -36,7 +47,7 @@
         </div>
 
         <div class="matching-header">
-            <button id="quit-btn" onclick="quit()"></button>
+            <button id="quit-btn" class="circle">X</button>
             <h2 id="de-bai">LET'S MATCHING</h2>
         </div>
         <div class="container">
