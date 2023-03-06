@@ -12,7 +12,7 @@ function lesson(target)
 
 function lesson_matching(target)
 {
-    var domain_name = 'http://' + window.location.host;
+    let domain_name = window.location.protocol + '//' + window.location.host;
     let name = target.name;
     let id = target.id;
     let url = new URL( domain_name + '/learning/lesson/matching?q=lesson&id=' + id + '&part=' + name);
