@@ -16,7 +16,7 @@ const loadCard = async () =>
 
     console.log([...randomIds]);
 
-    const res = await fetch('http://localhost:7777/api/getquestions');
+    const res = await fetch(domain_name +'/api/getquestions');
     const questions = await res.json();
     const question = questions.result;
     const a = [...randomIds];
