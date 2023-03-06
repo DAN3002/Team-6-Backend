@@ -100,7 +100,7 @@ getNewQuestion = () =>
         return window.location.assign('multiple_choice/end');
     }
     questionCounter++;
-    progressText.innerText = `Question ${questionCounter - 1}/${MAX_QUESTIONS}`;
+    progressText.innerText = `Question ${questionCounter}/${MAX_QUESTIONS}`;
     //Update the progress bar
     progressBarFull.style.width = `${((questionCounter - 1)/ MAX_QUESTIONS) * 100}%`;
 
