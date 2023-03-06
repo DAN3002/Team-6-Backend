@@ -6,14 +6,14 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-const port = process.env.port || 7777;
+const port = config.DATABASE_PORT || 1111;
 const path = require('path');
 
 
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.set('view engine', 'ejs');
-app.set('views', 'src/views');
+app.set('views', './src/views');
 
 const learningRouter = require('./src/routes/learning');
 app.use('/learning', learningRouter);

@@ -5,14 +5,8 @@
     #logo {
         margin-left: 80px;
     }
-    
     .user {
-        margin-top: 2px;
         right: 60px;
-    }
-
-    #nav li a {
-        line-height: 60px;
     }
 
     #header {
@@ -59,8 +53,6 @@
 
     #nav li {
         padding: 0 4px;
-        margin: 0 -7px;
-
     }
 
     #nav li a {
@@ -76,9 +68,9 @@
         margin-right: 8px;
     }
 
-    .signin {
+    .user {
         right: 0;
-        padding: 0 8px;
+        padding: 16px;
         height: 56px;
     }
 
