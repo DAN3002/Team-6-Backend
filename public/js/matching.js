@@ -1,4 +1,4 @@
-// const pokeAPIBaseUrl = "https://pokeapi.co/api/v2/pokemon/";
+let domain_name = window.location.protocol + '//' + window.location.host;
 const game = document.getElementById('game');
 const scoreText = document.getElementById('score');
 let score = 0;

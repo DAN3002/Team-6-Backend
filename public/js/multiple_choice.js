@@ -19,10 +19,9 @@ let availableQuesions = [];
 
 let questions = [];
 
-
-
+let domain_name = window.location.protocol + '//' + window.location.host;
 fetch(
-    'http://localhost:7777/api/getquestions'
+     domain_name + '/api/getquestions'
 )
     .then((res) =>
     {
