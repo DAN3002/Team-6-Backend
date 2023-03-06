@@ -1,4 +1,4 @@
-// const pokeAPIBaseUrl = "https://pokeapi.co/api/v2/pokemon/";
+var domain_name = 'http://' + window.location.host;
 const game = document.getElementById('game');
 const scoreText = document.getElementById('score');
 let score = 0;
@@ -14,9 +14,7 @@ const loadCard = async () =>
         randomIds.add(randomNumber);
     }
 
-    console.log([...randomIds]);
-
-    const res = await fetch('/api/getquestions');
+    const res = await fetch(domain_name + '/api/getquestions');
     const questions = await res.json();
     const question = questions.result;
     const a = [...randomIds];

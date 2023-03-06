@@ -19,10 +19,10 @@ let availableQuesions = [];
 
 let questions = [];
 
-
+var domain_name = 'http://' + window.location.host;
 
 fetch(
-    '/api/getquestions'
+    domain_name + '/api/getquestions'
 )
     .then((res) =>
     {
