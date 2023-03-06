@@ -1,6 +1,5 @@
 function lesson(target)
 {
-    
     let name = target.name;
     let id = target.id;
     let domain_name = window.location.protocol + '//' + window.location.host;
@@ -15,6 +14,6 @@ function lesson_matching(target)
     let domain_name = window.location.protocol + '//' + window.location.host;
     let name = target.name;
     let id = target.id;
-    let url = new URL( domain_name + '/learning/lesson/matching?q=lesson&id=' + id + '&part=' + name);
-    location.assign(url);
+    let url = new URL('http://localhost:7777/learning/lesson/matching?q=lesson&id=' + id + '&part=' + name);
+    location.assign(url);  
 }
