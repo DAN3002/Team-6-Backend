@@ -11,7 +11,7 @@ const path = require('path');
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.set('view engine', 'ejs');
-app.set('views', './src/views');
+app.set('views', 'src/views');
 
 app.get('/temp', (req, res) => res.render('temp'));
 
