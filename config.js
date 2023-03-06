@@ -1,6 +1,5 @@
 'use strict';
 const dotenv = require('dotenv');
-const assert = require('assert');
 
 dotenv.config();
 
@@ -15,9 +14,6 @@ const {
     messagingSenderId,
     appId
 } = process.env;
-
-assert(DATABASE_PORT, 'PORT must be');
-assert(HOST, 'HOST must be');
 
 module.exports = {
     port: DATABASE_PORT,
