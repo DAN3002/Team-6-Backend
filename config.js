@@ -1,7 +1,6 @@
 'use strict';
 const dotenv = require('dotenv');
 const assert = require('assert');
-
 dotenv.config();
 
 const {
@@ -13,7 +12,8 @@ const {
     projectId,
     storageBucket,
     messagingSenderId,
-    appId
+    appId,
+
 } = process.env;
 
 assert(DATABASE_PORT, 'PORT must be');
