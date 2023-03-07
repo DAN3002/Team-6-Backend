@@ -24,6 +24,15 @@ Essential Japanese language learning website comprehensively and thoroughly synt
 # Run
 •	Install packages
 
+```
+npm install
+```
+•	Run by terminal with command
+
+```
+npm start
+```
+
 •	Open `http://localhost:7777` in your browser to access web app.
 
 
