@@ -5,6 +5,8 @@ const scoreText = document.getElementById('score');
 const progressBarFull = document.getElementById('progressBarFull');
 const loader = document.getElementById('loader');
 const game = document.getElementById('game');
+const incorrect = document.getElementById('key');
+
 
 const multipleClose = document.querySelector('.btnx');
 const close = document.querySelector('#alrtbtn2');
@@ -60,7 +62,7 @@ fetch(
 
 //CONSTANTS
 const CORRECT_BONUS = 10;
-const MAX_QUESTIONS = 5;
+const MAX_QUESTIONS = 10;
 
 
 function closeChoice()
@@ -127,16 +129,21 @@ choices.forEach((choice) =>
         acceptingAnswers = false;
         const selectedChoice = e.target;
         const selectedAnswer = selectedChoice.dataset[ 'number' ];
+        const answerChoice = 'choice' + currentQuestion.answer;
+
+        console.log(currentQuestion[answerChoice]);
+        const answer = currentQuestion[answerChoice];
 
         const classToApply =
             selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect';
         if (classToApply === 'correct') {
             incrementScore(CORRECT_BONUS);
-            alertCorrect();
+            alertCorrect(answer);
             document.querySelector('.green').addEventListener('click', closeCorrectAlert);
         }
         else {
             alertWrong();
+            incorrect.innerHTML = "Correct Answer: " + answer;
             document.querySelector('.red').addEventListener('click', closeWrongAlert);
 
         }
