@@ -8,6 +8,7 @@ const game = document.getElementById('game');
 const incorrect = document.getElementById('key');
 
 
+
 const multipleClose = document.querySelector('.btnx');
 const close = document.querySelector('#alrtbtn2');
 const stay = document.querySelector('#alrtbtn1');
@@ -23,7 +24,7 @@ let questions = [];
 
 let domain_name = window.location.protocol + '//' + window.location.host;
 fetch(
-     domain_name + '/api/getquestions'
+    domain_name + '/api/getquestions'
 )
     .then((res) =>
     {
@@ -85,6 +86,8 @@ function stayAlert()
 }
 stay.addEventListener('click', stayAlert);
 
+let getQ = true;
+
 startGame = () =>
 {
     questionCounter = 0;
@@ -93,6 +96,8 @@ startGame = () =>
     getNewQuestion();
 
 };
+
+
 
 getNewQuestion = () =>
 {
@@ -104,7 +109,7 @@ getNewQuestion = () =>
     questionCounter++;
     progressText.innerText = `Question ${questionCounter}/${MAX_QUESTIONS}`;
     //Update the progress bar
-    progressBarFull.style.width = `${((questionCounter - 1)/ MAX_QUESTIONS) * 100}%`;
+    progressBarFull.style.width = `${((questionCounter - 1) / MAX_QUESTIONS) * 100}%`;
 
     const questionIndex = Math.floor(Math.random() * availableQuesions.length);
     currentQuestion = availableQuesions[ questionIndex ];
@@ -131,8 +136,8 @@ choices.forEach((choice) =>
         const selectedAnswer = selectedChoice.dataset[ 'number' ];
         const answerChoice = 'choice' + currentQuestion.answer;
 
-        console.log(currentQuestion[answerChoice]);
-        const answer = currentQuestion[answerChoice];
+        console.log(currentQuestion[ answerChoice ]);
+        const answer = currentQuestion[ answerChoice ];
 
         const classToApply =
             selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect';
@@ -158,20 +163,25 @@ choices.forEach((choice) =>
         function closeCorrectAlert()
         {
             document.querySelector('.correct').classList.remove('open');
+            selectedChoice.parentElement.classList.remove(classToApply);
+            setTimeout(() =>
+            {
+                getNewQuestion();
+            }, 300);
+
         }
 
         function closeWrongAlert()
         {
             document.querySelector('.wrong').classList.remove('open');
-        }
-
-        // selectedChoice.parentElement.classList.add(classToApply);
-
-        setTimeout(() =>
-        {
             selectedChoice.parentElement.classList.remove(classToApply);
-            getNewQuestion();
-        }, 1000);
+            setTimeout(() =>
+            {
+                getNewQuestion();
+            }, 300);
+
+
+        }
     });
 });
 
@@ -182,6 +192,7 @@ incrementScore = (num) =>
 };
 
 
-function quit(){
+function quit()
+{
     location.assign("/learning");
 }
