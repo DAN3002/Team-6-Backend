@@ -22,14 +22,14 @@
 .justify-center {
   justify-content: center;
 }
-.js-multiple {
+/* .js-multiple {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   z-index: 2;
-}
+} */
 
 .btnx {
   margin-left: 20px;
