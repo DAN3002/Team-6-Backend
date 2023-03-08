@@ -4,7 +4,6 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
         <link
             href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap"
             rel="stylesheet">
@@ -23,12 +22,12 @@
         <link rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="/../css/matching.css">
-        <link rel="stylesheet" href="/../css/matching_responsive.css"> 
-        
+        <link rel="stylesheet" href="/../css/matching_responsive.css">
+
         <title>Learn Japanese</title>
 
     </head>
-    <body>
+    <body oncontextmenu="return false;">
         <div class="thong-bao-thoat">
             <div class="alert" role="alert">
                 <h3 class="alert-heading">Are you sure you want to quit?</h3>
@@ -54,6 +53,29 @@
             <div id="game">
             </div>
         </div>
+        <script>
+
+            document.onkeydown = function (e) {
+                if (event.keyCode == 123) {
+                    return false;
+                }
+                if (e.ctrlKey && e.shiftKey && (e.keyCode == 'I'.charCodeAt(0) || e.keyCode == 'i'.charCodeAt(0))) {
+                    return false;
+                }
+                if (e.ctrlKey && e.shiftKey && (e.keyCode == 'C'.charCodeAt(0) || e.keyCode == 'c'.charCodeAt(0))) {
+                    return false;
+                }
+                if (e.ctrlKey && e.shiftKey && (e.keyCode == 'J'.charCodeAt(0) || e.keyCode == 'j'.charCodeAt(0))) {
+                    return false;
+                }
+                if (e.ctrlKey && (e.keyCode == 'U'.charCodeAt(0) || e.keyCode == 'u'.charCodeAt(0))) {
+                    return false;
+                }
+                if (e.ctrlKey && (e.keyCode == 'S'.charCodeAt(0) || e.keyCode == 's'.charCodeAt(0))) {
+                    return false;
+                }
+            }
+        </script>
         <script src="/../js/matching.js"></script>
     </body>
 </html>

@@ -158,30 +158,27 @@ choices.forEach((choice) =>
         }
         function alertWrong()
         {
+
             document.querySelector('.wrong').classList.add('open');
         }
         function closeCorrectAlert()
         {
-            document.querySelector('.correct').classList.remove('open');
-            selectedChoice.parentElement.classList.remove(classToApply);
-            setTimeout(() =>
-            {
-                getNewQuestion();
-            }, 300);
 
+            document.querySelector('.correct').classList.remove('open');
         }
 
         function closeWrongAlert()
         {
             document.querySelector('.wrong').classList.remove('open');
-            selectedChoice.parentElement.classList.remove(classToApply);
-            setTimeout(() =>
-            {
-                getNewQuestion();
-            }, 300);
-
-
         }
+
+        selectedChoice.parentElement.classList.remove(classToApply);
+        setTimeout(() =>
+        {
+            getNewQuestion();
+        }, 3000);
+
+
     });
 });
 

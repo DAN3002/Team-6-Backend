@@ -36,6 +36,8 @@
     }
 
     
+
+    
 }
 /* Mobile */
 @media (max-width: 760px) and (min-width: 600px) {
@@ -73,6 +75,11 @@
     .container {
         margin: 120px auto;
     }
+
+    h2 {
+        font-size: 16px;
+    }
+
 
 }
 
@@ -126,6 +133,10 @@
     .hud-main-text {
         margin-right: 3.2rem;
     }
+
+    h2 {
+        font-size: 16px;
+    }
       
 }
 
@@ -178,6 +189,10 @@
 
     .hud-main-text {
         margin-right: 2rem;
+    }
+
+    h2 {
+        font-size: 12px;
     }
 }
 

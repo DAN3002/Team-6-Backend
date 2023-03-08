@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -22,82 +23,109 @@
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <title>Learn Japanese</title>
     </head>
-    <body>
-        <div class="js-multiple">
-            <div class="mul-header">
-                <button class="btnx circle">X</button>
-                <div id="hud">
-                    <div id="hud-item">
-                        <div id="progressText" class="hud-prefix-question">
-                            Question
+
+    <body oncontextmenu="return false;">
+        <body>
+            <div class="js-multiple">
+                <div class="mul-header">
+                    <button class="btnx circle">X</button>
+                    <div id="hud">
+                        <div id="hud-item">
+                            <div id="progressText" class="hud-prefix-question">
+                                Question
+                            </div>
+                            <div id="progressBar">
+                                <div id="progressBarFull"></div>
+                            </div>
                         </div>
-                        <div id="progressBar">
-                            <div id="progressBarFull"></div>
+                        <div id="hud-item" class="score">
+                            <div class="hud-prefix">
+                                Score
+                            </div>
+                            <h1 class="hud-main-text" id="score">
+                                0
+                            </h1>
                         </div>
                     </div>
-                    <div id="hud-item" class="score">
-                        <div class="hud-prefix">
-                            Score
+                </div>
+
+
+                <h2 id="question"></h2>
+
+
+                <div class="choice">
+                    <div class="choice-container">
+
+                        <div class="btn1" data-number="1"></div>
+                    </div>
+                    <div class="choice-container">
+
+                        <div class="btn1" data-number="2"></div>
+                    </div>
+                    <div class="choice-container">
+
+                        <div class="btn1" data-number="3"></div>
+                    </div>
+                    <div class="choice-container">
+
+                        <div class="btn1" data-number="4"></div>
+
+                    </div>
+
+                    <hr>
+
+                    <div class="thong-bao-thoat">
+                        <div class="alert" role="alert">
+                            <h3 class="alert-heading">Are you sure you want to
+                                quit?</h3>
+                            <p>All the progress in this lesson will be lost</p>
+                            <button id="alrtbtn1">STAY</button>
+                            <button id="alrtbtn2" onclick="quit()">QUIT</button>
                         </div>
-                        <h1 class="hud-main-text" id="score">
-                            0
-                        </h1>
                     </div>
-                </div>
-            </div>
 
-
-            <h2 id="question"></h2>
-
-
-            <div class="choice">
-                <div class="choice-container">
-
-                    <div class="btn1" data-number="1"></div>
-                </div>
-                <div class="choice-container">
-
-                    <div class="btn1" data-number="2"></div>
-                </div>
-                <div class="choice-container">
-
-                    <div class="btn1" data-number="3"></div>
-                </div>
-                <div class="choice-container">
-
-                    <div class="btn1" data-number="4"></div>
-
-                </div>
-
-                <hr>
-
-                <div class="thong-bao-thoat">
-                    <div class="alert" role="alert">
-                        <h3 class="alert-heading">Are you sure you want to quit?</h3>
-                        <p>All the progress in this lesson will be lost</p>
-                        <button id="alrtbtn1">STAY</button>
-                        <button id="alrtbtn2" onclick="quit()">QUIT</button>
+                    <div class="correct">
+                        <div class="correct-alert">
+                            <i class="fa fa-check-circle-o"></i>
+                            <span id="correct-text">Excellent!</span>
+                            <button class="nextbtn temp green">Continue</button>
+                        </div>
                     </div>
-                </div>
 
-                <div class="correct">
-                    <div class="correct-alert">
-                        <i class="fa fa-check-circle-o"></i>
-                        <span id="correct-text">Excellent!</span>
-                        <button class="nextbtn green" >Continue</button>
+                    <div class="wrong">
+                        <div class="wrong-alert">
+                            <i class="fa fa-close"></i>
+                            <span id="wrong-text">Incorrect Answer <br> <span
+                                    id="key"></span></span>
+                            <button class="nextbtn temp red" id="next">Continue</button>
+                        </div>
                     </div>
-                </div>
 
-                <div class="wrong">
-                    <div class="wrong-alert">
-                        <i class="fa fa-close"></i>
-                        <span id="wrong-text">Incorrect Answer <br> <span
-                                id="key"></span></span>
-                        <button class="nextbtn red" >Continue</button>
-                    </div>
                 </div>
+                <script>
 
-            </div>
-            <script src="/../js/multiple_choice.js"></script>
-        </body>
-    </html>
+                document.onkeydown = function (e) {
+                    if (event.keyCode == 123) {
+                        return false;
+                    }
+                    if (e.ctrlKey && e.shiftKey && (e.keyCode == 'I'.charCodeAt(0) || e.keyCode == 'i'.charCodeAt(0))) {
+                        return false;
+                    }
+                    if (e.ctrlKey && e.shiftKey && (e.keyCode == 'C'.charCodeAt(0) || e.keyCode == 'c'.charCodeAt(0))) {
+                        return false;
+                    }
+                    if (e.ctrlKey && e.shiftKey && (e.keyCode == 'J'.charCodeAt(0) || e.keyCode == 'j'.charCodeAt(0))) {
+                        return false;
+                    }
+                    if (e.ctrlKey && (e.keyCode == 'U'.charCodeAt(0) || e.keyCode == 'u'.charCodeAt(0))) {
+                        return false;
+                    }
+                    if (e.ctrlKey && (e.keyCode == 'S'.charCodeAt(0) || e.keyCode == 's'.charCodeAt(0))) {
+                        return false;
+                    }
+                }
+            </script>
+                <script src="/../js/multiple_choice.js"></script>
+            </body>
+
+        </html>
